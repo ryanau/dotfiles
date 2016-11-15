@@ -14,6 +14,7 @@ Plugin 'ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -106,6 +107,11 @@ nnoremap <LocalLeader>q :nohlsearch<CR>
 " Toggle relative numbering
 set relativenumber
 autocmd! InsertEnter,InsertLeave * set invrelativenumber
+
+" Silver Searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+cnoreabbrev Ack Ack!
+nnoremap <LocalLeader>a :Ack!<Space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline

@@ -7,19 +7,25 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plugin 'tpope/vim-surround'
-Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
-Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mileszs/ack.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
+Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
+Plugin 'tpope/vim-rails', { 'for' : 'ruby' }
+Plugin 'hail2u/vim-css3-syntax', { 'for' : 'scss.css' }
 
 call vundle#end()
 filetype plugin indent on
 
 inoremap jk <ESC>
+
 let mapleader = "\<Space>"
 
 filetype plugin indent on
@@ -44,6 +50,9 @@ set title
 set visualbell
 set noerrorbells
 set autoread
+set updatetime=250
+set list lcs=tab:\|\ 
+set list
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -55,8 +64,6 @@ set sidescrolloff=5           " Keep at least 5 lines left/right
 set scrolloff=5               " Keep at least 5 lines above/below
 
 " Indenting
-" set tabstop=4
-" set softtabstop=4
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2
 
 " Clipboard
@@ -70,7 +77,6 @@ let maplocalleader="\<Space>"
 " Easy Motion
 map <LocalLeader> <Plug>(easymotion-prefix)
 hi EasyMotionTarget ctermbg=none ctermfg=green
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -99,10 +105,22 @@ let g:ctrlp_max_files=0
 map <LocalLeader>c :TComment<CR>
 
 " Copy file path
-nnoremap <LocalLeader>u :let @+=expand('%')<CR>
+nnoremap cp :let @" = expand("%")"
 
 " Unhighlight
 nnoremap <LocalLeader>q :nohlsearch<CR>
+
+" Move lines
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Jump to front/back of lines
+nnoremap <C-h> ^
+nnoremap <C-l> $
 
 " Toggle relative numbering
 set relativenumber
@@ -121,3 +139,13 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#empty_message = 'local'
 let g:airline#extensions#tmuxline#enabled = 0
 set laststatus=2
+
+""""""""""""""""""""""""""""""""""""
+" Fugitive
+""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <LocalLeader>gs :Gstatus<CR>
+nnoremap <silent> <LocalLeader>gd :Gdiff<CR>
+nnoremap <silent> <LocalLeader>gc :Gcommit<CR>
+nnoremap <silent> <LocalLeader>gb :Gblame<CR>
+nnoremap <silent> <LocalLeader>gr :Gread<CR>
+nnoremap <silent> <LocalLeader>gw :Gwrite<CR>

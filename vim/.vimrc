@@ -54,6 +54,7 @@ set updatetime=250
 set list lcs=tab:\|\ 
 set list
 
+" Disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -111,16 +112,14 @@ nnoremap cp :let @" = expand("%")"
 nnoremap <LocalLeader>q :nohlsearch<CR>
 
 " Move lines
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap fj :m .+1<CR>==
+nnoremap fk :m .-2<CR>==
 
 " Jump to front/back of lines
 nnoremap <C-h> ^
 nnoremap <C-l> $
+nnoremap <C-k> gg
+nnoremap <C-j> G
 
 " Toggle relative numbering
 set relativenumber

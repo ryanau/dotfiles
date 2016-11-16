@@ -79,6 +79,13 @@ let maplocalleader="\<Space>"
 map <LocalLeader> <Plug>(easymotion-prefix)
 hi EasyMotionTarget ctermbg=none ctermfg=green
 
+" Split
+set splitbelow
+set splitright
+
+" Search word under cursor
+nnoremap <LocalLeader>s *
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,6 +108,12 @@ let g:NERDTreeMapOpenSplit='<C-s>'
 " Ctrlp
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=0
+
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 
 " Tcomment
 map <LocalLeader>c :TComment<CR>

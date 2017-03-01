@@ -55,6 +55,12 @@ set autoread
 set updatetime=250
 set list lcs=tab:\|\ 
 set list
+set number
+
+" Toggle relative numbering
+set relativenumber
+autocmd! InsertEnter,InsertLeave * set invrelativenumber
+
 
 " Disable arrow keys
 noremap <Up> <NOP>
@@ -156,10 +162,6 @@ nnoremap <LocalLeader>q :nohlsearch<CR>
 nnoremap fj :m .+1<CR>==
 nnoremap fk :m .-2<CR>==
 
-" Toggle relative numbering
-set relativenumber
-autocmd! InsertEnter,InsertLeave * set invrelativenumber
-
 " Silver Searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 cnoreabbrev Ack Ack!
@@ -170,8 +172,8 @@ nnoremap <LocalLeader>a :Ack!<Space>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#branch#empty_message = 'local'
-let g:airline#extensions#tmuxline#enabled = 0
+" let g:airline#extensions#branch#empty_message = 'local'
+" let g:airline#extensions#tmuxline#enabled = 0
 set laststatus=2
 
 " Enable list of buffers

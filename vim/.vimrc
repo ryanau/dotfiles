@@ -16,6 +16,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -93,7 +94,8 @@ nnoremap <LocalLeader>s *
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeHijackNetrw=0
 nnoremap <LocalLeader>m :call NerdTreeToggle()<CR>
 nnoremap <LocalLeader>m :NERDTreeToggle<CR>
 nnoremap <LocalLeader>f :NERDTreeFind<CR>
@@ -153,12 +155,6 @@ nnoremap <LocalLeader>q :nohlsearch<CR>
 " Move lines
 nnoremap fj :m .+1<CR>==
 nnoremap fk :m .-2<CR>==
-
-" Jump to front/back of lines
-nnoremap <C-h> ^
-nnoremap <C-l> $
-nnoremap <C-k> gg
-nnoremap <C-j> G
 
 " Toggle relative numbering
 set relativenumber

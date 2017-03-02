@@ -17,6 +17,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -56,6 +57,8 @@ set updatetime=250
 set list lcs=tab:\|\ 
 set list
 set number
+
+set backspace=indent,eol,start
 
 " Toggle relative numbering
 set relativenumber

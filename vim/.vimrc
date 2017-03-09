@@ -8,7 +8,6 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -18,6 +17,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -30,6 +31,10 @@ filetype plugin indent on
 inoremap jk <ESC>
 
 let mapleader = "\<Space>"
+
+" Easier to run commands
+nnoremap ; :
+vnoremap ; :
 
 filetype plugin indent on
 syntax on
@@ -103,7 +108,7 @@ nnoremap <LocalLeader>s *
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:NERDTreeHijackNetrw=0
 nnoremap <LocalLeader>m :call NerdTreeToggle()<CR>
 nnoremap <LocalLeader>m :NERDTreeToggle<CR>
@@ -113,21 +118,37 @@ let g:NERDTreeWinSize = 50
 let g:NERDTreeMapOpenVSplit='<C-v>'
 let g:NERDTreeMapOpenSplit='<C-s>'
 
-" Ctrlp
-let g:ctrlp_max_depth=40
-let g:ctrlp_max_files=0
-let g:ctrlp_working_path_mode = 'r'
 
-" Easy bindings for its various modes
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FZF
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <C-p> :FZF -m<CR>
+nmap <LocalLeader>a :FzfAg<Space>
+nmap <LocalLeader>. :FzfTags<CR>
 
-" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
+
+let g:fzf_files_options =
+  \ '--color=always ' .
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor    " Use ag over grep
+endif
+
+" Search directory for word under cursor
+nmap S :FzfAg (self\.)?<C-R><C-W><CR>
+
+" Open windows in splits
+let g:fzf_action = {
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit',
+\ }
+
+" Appearance
+let g:fzf_layout = { 'down': '~30%'  }
+let g:fzf_nvim_statusline = 0
+let g:fzf_command_prefix = 'Fzf'
 
 " Buffers
 let g:buffergator_viewport_split_policy = 'R'
@@ -156,7 +177,7 @@ nmap <leader>T :enew<cr>
 map <LocalLeader>c :TComment<CR>
 
 " Copy file path
-nnoremap cp :let @" = expand("%")"
+nnoremap <LocalLeader>u :let @+=expand('%')<CR>
 
 " Unhighlight
 nnoremap <LocalLeader>q :nohlsearch<CR>

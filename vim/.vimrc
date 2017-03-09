@@ -179,17 +179,15 @@ map <LocalLeader>c :TComment<CR>
 " Copy file path
 nnoremap <LocalLeader>u :let @+=expand('%')<CR>
 
+" Close buffer
+map <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>.
+
 " Unhighlight
 nnoremap <LocalLeader>q :nohlsearch<CR>
 
 " Move lines
 nnoremap fj :m .+1<CR>==
 nnoremap fk :m .-2<CR>==
-
-" Silver Searcher
-let g:ackprg = 'ag --nogroup --nocolor --column'
-cnoreabbrev Ack Ack!
-nnoremap <LocalLeader>a :Ack!<Space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline

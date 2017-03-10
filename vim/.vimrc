@@ -18,7 +18,10 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-repeat'
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -69,6 +72,7 @@ set backspace=indent,eol,start
 set relativenumber
 autocmd! InsertEnter,InsertLeave * set invrelativenumber
 
+set autochdir
 
 " Disable arrow keys
 noremap <Up> <NOP>

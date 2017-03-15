@@ -27,6 +27,7 @@ Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
 Plugin 'tpope/vim-rails', { 'for' : 'ruby' }
 Plugin 'hail2u/vim-css3-syntax', { 'for' : 'scss.css' }
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 filetype plugin indent on
@@ -72,7 +73,7 @@ set backspace=indent,eol,start
 set relativenumber
 autocmd! InsertEnter,InsertLeave * set invrelativenumber
 
-set autochdir
+" set autochdir
 
 " Disable arrow keys
 noremap <Up> <NOP>

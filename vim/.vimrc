@@ -36,10 +36,6 @@ inoremap jk <ESC>
 
 let mapleader = "\<Space>"
 
-" Easier to run commands
-nnoremap ; :
-vnoremap ; :
-
 filetype plugin indent on
 syntax on
 set encoding=utf-8

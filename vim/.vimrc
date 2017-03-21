@@ -22,6 +22,7 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-repeat'
+Plugin 'junegunn/vim-easy-align'
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -59,7 +60,7 @@ set visualbell
 set noerrorbells
 set autoread
 set updatetime=250
-set list lcs=tab:\|\ 
+set list lcs=tab:\|\
 set list
 set number
 
@@ -214,3 +215,13 @@ nnoremap <silent> <LocalLeader>gc :Gcommit<CR>
 nnoremap <silent> <LocalLeader>gb :Gblame<CR>
 nnoremap <silent> <LocalLeader>gr :Gread<CR>
 nnoremap <silent> <LocalLeader>gw :Gwrite<CR>
+
+""""""""""""""""""""""""""""""""""""
+" Easy Align
+""""""""""""""""""""""""""""""""""""
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)"

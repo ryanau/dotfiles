@@ -29,6 +29,7 @@ Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
 Plugin 'tpope/vim-rails', { 'for' : 'ruby' }
 Plugin 'hail2u/vim-css3-syntax', { 'for' : 'scss.css' }
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()
 filetype plugin indent on

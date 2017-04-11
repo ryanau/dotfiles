@@ -129,7 +129,7 @@ nmap <C-p> :FZF -m<CR>
 nmap <LocalLeader>a :FzfAg<Space>
 nmap <LocalLeader>. :FzfTags<CR>
 
-let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden -l -g ""'
 
 let g:fzf_files_options =
   \ '--color=always ' .
@@ -191,6 +191,11 @@ nnoremap <LocalLeader>q :nohlsearch<CR>
 " Move lines
 nnoremap fj :m .+1<CR>==
 nnoremap fk :m .-2<CR>==
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim JSX
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jsx_ext_required = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline

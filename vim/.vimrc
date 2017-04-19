@@ -23,6 +23,9 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -183,7 +186,7 @@ map <LocalLeader>c :TComment<CR>
 nnoremap <LocalLeader>u :let @+=expand('%')<CR>
 
 " Close buffer
-map <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>.
+map <leader>g :bp<bar>sp<bar>bn<bar>bd<CR>.
 
 " Unhighlight
 nnoremap <LocalLeader>q :nohlsearch<CR>
@@ -191,6 +194,9 @@ nnoremap <LocalLeader>q :nohlsearch<CR>
 " Move lines
 nnoremap fj :m .+1<CR>==
 nnoremap fk :m .-2<CR>==
+
+" Truly delete (write to blackhole register).
+nmap <Leader>d "_d
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim JSX

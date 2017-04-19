@@ -1,0 +1,212 @@
+# JavaScript Snippets:
+# Some borrowed from github.com/honza/vim-snippets
+
+# CORE:
+snippet ed
+	export default 
+snippet function
+	function${1}(${2}) {
+	  ${3}
+	}
+snippet function;
+	function${1}(${2}) {
+	  ${3}
+	};
+snippet function,
+	function${1}(${2}) {
+	  ${3}
+	},
+snippet f
+	function${1}(${2}) {
+	  ${3}
+	}
+snippet f;
+	function${1}(${2}) {
+	  ${3}
+	};
+snippet f,
+	function${1}(${2}) {
+	  ${3}
+	},
+snippet l
+	(${1}) => ${2}
+snippet lm
+	(${1}) => {
+	  ${2}
+	}
+snippet lm;
+	(${1}) => {
+	  ${2}
+	};
+snippet vf
+	var ${1:function_name} = function${2}(${3}) {
+	  ${4}
+	};
+snippet if
+	if (${1:true}) {
+	  ${0}
+	}
+snippet ife
+	if (${1:true}) {
+	  ${2}
+	} else {
+	  ${0}
+	}
+snippet ter
+	${1:/* condition */} ? ${2:a} : ${0:b}
+snippet switch
+	switch (${1:expression}) {
+	  case ${3:case}:
+	    ${4}
+	    break;
+	  ${0}
+	}
+snippet case
+	case ${1:case}:
+	  ${2}
+	  break;
+	${0}
+snippet typeof
+	typeof ${1:object} === '${2:type}'
+snippet jp
+	JSON.parse(${0:jstr});
+snippet js
+	JSON.stringify(${0:object});
+snippet makearray
+	Array.prototype.slice.call(${1:arguments}, 0);
+snippet strict
+	'use strict';
+snippet iife
+	(function(${1}) {
+	  'use strict';
+	  ${3}
+	})(${2});
+snippet while
+	while (${1}) {
+	  ${2}
+	}
+snippet rand
+	Math.floor(Math.random() * (1 + ${3:high} - ${1:low})) + ${2:low};
+snippet b
+	{
+	  ${1}
+	}
+snippet b,
+	{
+	  ${1}
+	},
+snippet b;
+	{
+	  ${1}
+	};
+snippet a
+	[
+	  ${1}
+	]
+snippet a,
+	[
+	  ${1}
+	],
+snippet a;
+	[
+	  ${1}
+	];
+snippet p
+	(
+	  ${1}
+	)
+snippet p,
+	(
+	  ${1}
+	),
+snippet p;
+	(
+	  ${1}
+	);
+snippet cl
+	console.log(${0});
+snippet =
+	=== ${1}
+snippet umd
+	(function(root, factory) {
+	  if (typeof define === 'function' && define.amd) {
+	    define([], factory);
+	  } else if (typeof exports === 'object') {
+	    module.exports = factory();
+	  } else {
+	    root.X = factory();
+	  }
+	}(this, function () {
+	  var X;
+	  
+	  return X;
+	}));
+# NODE:
+snippet mexp
+	module.exports
+snippet exp
+	exports
+snippet r
+	require('${1:module}')
+snippet grunt
+	module.exports = function(grunt) {
+	  'use strict';
+	  grunt.initConfig({
+	    ${1}
+	  });
+
+	  grunt.loadNpmTasks('');
+	  grunt.registerTask('', ['']);
+	};
+# DOM/BROWSER:
+snippet doc
+	document
+snippet byId
+	document.getElementById('${1}')
+snippet byClass
+	document.getElementsByClassName('${1}')
+snippet byTag
+	document.getElementsByTagName('${1}')
+snippet qs
+	querySelector('${1}');
+snippet qsa
+	querySelectorAll('${1}');
+snippet dqs
+	document.querySelector('${1}');
+snippet dqsa
+	documentquerySelectorAll('${1}');
+snippet epd
+	event.preventDefault();
+snippet d
+	debugger
+# TESTING:
+snippet des
+	describe('${1:feature}', () => {
+	  ${2}
+	});
+snippet it
+	it('${1:expectation}', () => {
+	  ${2}
+	});
+snippet be
+	beforeEach(() => {
+	  ${1}
+	});
+snippet ae
+	afterEach(() => {
+	  ${1}
+	});
+snippet qt
+	test('${1:description}', (assert) => {
+	  assert.expect();
+	  ${2}
+	});
+# DOCUMENTATION:
+snippet jd
+	/**
+	 * ${1}
+	 */
+snippet @param
+	@param {${1:type}} ${2:name} ${3:description}
+snippet @return
+	@return {${1:type}} ${2:description}

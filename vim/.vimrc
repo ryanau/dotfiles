@@ -26,6 +26,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'garbas/vim-snipmate'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+Plugin 'svermeulen/vim-easyclip'
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -195,8 +196,8 @@ nnoremap <LocalLeader>q :nohlsearch<CR>
 nnoremap fj :m .+1<CR>==
 nnoremap fk :m .-2<CR>==
 
-" Truly delete (write to blackhole register).
-nmap <Leader>d "_d
+" Easyclip
+nnoremap gm m
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim JSX

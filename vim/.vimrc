@@ -27,6 +27,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'svermeulen/vim-easyclip'
+Plugin 'FooSoft/vim-argwrap'
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -68,6 +69,7 @@ set updatetime=250
 set list lcs=tab:\|\
 set list
 set number
+set iskeyword+=- " Don't treat dashes as word separators.
 
 set backspace=indent,eol,start
 
@@ -198,6 +200,11 @@ nnoremap fk :m .-2<CR>==
 
 " Easyclip
 nnoremap gm m
+
+" ArgWrap
+nnoremap <silent> <leader>h :ArgWrap<CR>
+let g:argwrap_tail_comma = 1
+let g:argwrap_padded_braces = '{'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim JSX

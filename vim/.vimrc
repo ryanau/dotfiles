@@ -27,7 +27,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'svermeulen/vim-easyclip'
-Plugin 'FooSoft/vim-argwrap'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -201,11 +201,6 @@ nnoremap fk :m .-2<CR>==
 " Easyclip
 nnoremap gm m
 
-" ArgWrap
-nnoremap <silent> <leader>h :ArgWrap<CR>
-let g:argwrap_tail_comma = 1
-let g:argwrap_padded_braces = '{'
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim JSX
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -245,3 +240,10 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)"
+
+
+""""""""""""""""""""""""""""""""""""
+" SplitJoin
+""""""""""""""""""""""""""""""""""""
+let g:splitjoin_trailing_comma = 1
+let g:splitjoin_ruby_hanging_args = 0

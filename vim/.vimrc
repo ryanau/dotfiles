@@ -107,6 +107,9 @@ let maplocalleader="\<Space>"
 " Easy Motion
 map <LocalLeader> <Plug>(easymotion-prefix)
 hi EasyMotionTarget ctermbg=none ctermfg=green
+let g:EasyMotion_do_mapping = 0 " Disable default mappings"
+nmap s <Plug>(easymotion-overwin-f)
+let g:EasyMotion_smartcase = 1
 
 " Split
 set splitbelow

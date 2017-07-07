@@ -218,6 +218,7 @@ let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
 " let g:airline#extensions#branch#empty_message = 'local'
 " let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 set laststatus=2
 
 " Enable list of buffers

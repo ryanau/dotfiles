@@ -26,6 +26,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'garbas/vim-snipmate'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
 Plugin 'svermeulen/vim-easyclip'
 Plugin 'AndrewRadev/splitjoin.vim'
 

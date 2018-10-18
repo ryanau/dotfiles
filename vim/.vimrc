@@ -32,11 +32,13 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
 Plugin 'tpope/vim-rails', { 'for' : 'ruby' }
-Plugin 'hail2u/vim-css3-syntax', { 'for' : 'scss.css' }
+Plugin 'hail2u/vim-css3-syntax', { 'for' : 'sass.css' }
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'fleischie/vim-styled-components'
 Plugin 'lambdatoast/elm.vim'
+Plugin 'slim-template/vim-slim'
+Plugin 'AndrewRadev/vim-eco'
 
 call vundle#end()
 filetype plugin indent on
@@ -118,6 +120,9 @@ set splitright
 
 " Search word under cursor
 nnoremap <LocalLeader>s *
+
+" File specific line widths
+autocmd BufNewFile,BufReadPre *.rb,*.rake setlocal textwidth=100
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -216,10 +221,8 @@ let g:jsx_ext_required = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
-" let g:airline#extensions#branch#empty_message = 'local'
-" let g:airline#extensions#tmuxline#enabled = 0
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-set laststatus=2
+let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " Enable list of buffers
 let g:airline#extensions#tabline#enabled = 1

@@ -41,6 +41,8 @@ Plugin 'lambdatoast/elm.vim'
 Plugin 'slim-template/vim-slim'
 Plugin 'AndrewRadev/vim-eco'
 
+runtime macros/matchit.vim
+
 call vundle#end()
 filetype plugin indent on
 

@@ -29,6 +29,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'honza/vim-snippets'
 Plugin 'svermeulen/vim-easyclip'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'neomake/neomake'
 
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
@@ -40,6 +41,9 @@ Plugin 'fleischie/vim-styled-components'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'slim-template/vim-slim'
 Plugin 'AndrewRadev/vim-eco'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'quramy/tsuquyomi'
+Plugin 'peitalin/vim-jsx-typescript'
 
 runtime macros/matchit.vim
 
@@ -219,6 +223,21 @@ nnoremap gm m
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jsx_ext_required = 0
 
+" set filetypes as typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+
+" dark red
+hi tsxTagName guifg=#E06C75
+
+" orange
+hi tsxCloseString guifg=#F99575
+hi tsxCloseTag guifg=#F99575
+hi tsxAttributeBraces guifg=#F99575
+hi tsxEqual guifg=#F99575
+
+" yellow
+hi tsxAttrib guifg=#F8BD7F cterm=italic
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -259,3 +278,15 @@ nmap ga <Plug>(EasyAlign)"
 """"""""""""""""""""""""""""""""""""
 let g:splitjoin_trailing_comma = 1
 let g:splitjoin_ruby_hanging_args = 0
+
+
+""""""""""""""""""""""""""""""""""""
+" Neomake
+""""""""""""""""""""""""""""""""""""
+" call neomake#configure#automake('w')
+let g:neomake_open_list=0
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_logfile = '/usr/local/var/log/neomake.log'
+autocmd! BufWritePost * Neomake
+

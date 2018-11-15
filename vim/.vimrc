@@ -3,34 +3,35 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
-Plugin 'tpope/vim-surround'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'mileszs/ack.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'junegunn/fzf.vim'
+Plugin 'VundleVim/Vundle.vim' " plugin manager
+Plugin 'easymotion/vim-easymotion' " jump to word quickly
+Plugin 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] } " file tree
+Plugin 'tpope/vim-surround' " changeing quotes
+Plugin 'tomtom/tcomment_vim' " easy commenting
+Plugin 'jiangmiao/auto-pairs' " insert quotes in pairs
+Plugin 'bling/vim-airline' " status bar
+Plugin 'vim-airline/vim-airline-themes' " status bar themes
+Plugin 'mileszs/ack.vim' " global search
+Plugin 'airblade/vim-gitgutter' " show git diff in vim
+Plugin 'tpope/vim-fugitive' " git integration
+Plugin 'jeetsukumaran/vim-buffergator' " easy buffer nav
+Plugin 'christoomey/vim-tmux-navigator' " tmux integration
+Plugin 'terryma/vim-multiple-cursors' " multi cursor
+Plugin 'junegunn/fzf.vim' " search for file
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-repeat'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'garbas/vim-snipmate'
+Plugin 'tpope/vim-endwise' " adding 'end' in ruby
+Plugin 'tpope/vim-abolish' " change casing
+Plugin 'tpope/vim-repeat' " repeat commands for some plugins
+Plugin 'junegunn/vim-easy-align' " aligning text
+Plugin 'garbas/vim-snipmate' " vim snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'honza/vim-snippets'
-Plugin 'svermeulen/vim-easyclip'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'neomake/neomake'
+Plugin 'svermeulen/vim-easyclip' " true blackhole deletion
+Plugin 'AndrewRadev/splitjoin.vim' " joining/splitting ruby blocks
+Plugin 'neomake/neomake' " linting
 
+" Syntax highlighting, file extension support
 Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
 Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
 Plugin 'tpope/vim-rails', { 'for' : 'ruby' }
@@ -115,9 +116,9 @@ vnoremap <C-c> :w !pbcopy<CR><CR> noremap <C-v> :r !pbpaste<CR><CR>
 let maplocalleader="\<Space>"
 
 " Easy Motion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings"
 map <LocalLeader> <Plug>(easymotion-prefix)
 hi EasyMotionTarget ctermbg=none ctermfg=green
-let g:EasyMotion_do_mapping = 0 " Disable default mappings"
 nmap s <Plug>(easymotion-overwin-f)
 let g:EasyMotion_smartcase = 1
 
@@ -127,6 +128,9 @@ set splitright
 
 " Search word under cursor
 nnoremap <LocalLeader>s *
+
+" Unhighlight
+nnoremap <LocalLeader>q :nohlsearch<CR>
 
 " File specific line widths
 autocmd BufNewFile,BufReadPre *.rb,*.rake setlocal textwidth=100
@@ -207,9 +211,6 @@ nnoremap <LocalLeader>u :let @+=expand('%')<CR>
 
 " Close buffer
 map <leader>g :bp<bar>sp<bar>bn<bar>bd<CR>.
-
-" Unhighlight
-nnoremap <LocalLeader>q :nohlsearch<CR>
 
 " Move lines
 nnoremap fj :m .+1<CR>==

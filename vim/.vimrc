@@ -16,7 +16,6 @@ Plugin 'airblade/vim-gitgutter' " show git diff in vim
 Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'jeetsukumaran/vim-buffergator' " easy buffer nav
 Plugin 'christoomey/vim-tmux-navigator' " tmux integration
-Plugin 'terryma/vim-multiple-cursors' " multi cursor
 Plugin 'junegunn/fzf.vim' " search for file
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'tpope/vim-endwise' " adding 'end' in ruby
@@ -30,21 +29,17 @@ Plugin 'honza/vim-snippets'
 Plugin 'svermeulen/vim-easyclip' " true blackhole deletion
 Plugin 'AndrewRadev/splitjoin.vim' " joining/splitting ruby blocks
 Plugin 'neomake/neomake' " linting
+Plugin 'ConradIrwin/vim-bracketed-paste' " set paste for you
+Plugin 'sheerun/vim-polyglot'
+Plugin 'sickill/vim-pasta'
+Plugin 'machakann/vim-swap'
+Plugin 'tpope/vim-rhubarb'
 
 " Syntax highlighting, file extension support
-Plugin 'pangloss/vim-javascript', { 'for' : 'javascript.jsx' }
-Plugin 'mxw/vim-jsx', { 'for' : 'javascript.jsx' }
 Plugin 'tpope/vim-rails', { 'for' : 'ruby' }
 Plugin 'hail2u/vim-css3-syntax', { 'for' : 'sass.css' }
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'fleischie/vim-styled-components'
-Plugin 'lambdatoast/elm.vim'
-Plugin 'slim-template/vim-slim'
 Plugin 'AndrewRadev/vim-eco'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'quramy/tsuquyomi'
-Plugin 'peitalin/vim-jsx-typescript'
 
 runtime macros/matchit.vim
 
@@ -88,6 +83,9 @@ set backspace=indent,eol,start
 " Toggle relative numbering
 set relativenumber
 autocmd! InsertEnter,InsertLeave * set invrelativenumber
+
+" alert for over 80 chars
+set colorcolumn=81
 
 " set autochdir
 
@@ -261,7 +259,10 @@ nnoremap <silent> <LocalLeader>gd :Gdiff<CR>
 nnoremap <silent> <LocalLeader>gc :Gcommit<CR>
 nnoremap <silent> <LocalLeader>gb :Gblame<CR>
 nnoremap <silent> <LocalLeader>gr :Gread<CR>
-nnoremap <silent> <LocalLeader>gw :Gwrite<CR>
+nmap <silent> <LocalLeader>gr :Gbrowse<CR>
+vmap <silent> <LocalLeader>gr :Gbrowse<CR>
+
+let g:fugitive_github_domains = ['github.com']
 
 """"""""""""""""""""""""""""""""""""
 " Easy Align
@@ -291,3 +292,13 @@ let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_logfile = '/usr/local/var/log/neomake.log'
 autocmd! BufWritePost * Neomake
 
+""""""""""""""""""""""""""""""""""""
+" GitGutter
+""""""""""""""""""""""""""""""""""""
+nmap <LocalLeader>ha <Plug>GitGutterNextHunk
+nmap <LocalLeader>hr <Plug>GitGutterUndoHunk
+
+""""""""""""""""""""""""""""""""""""
+" VimPasta
+""""""""""""""""""""""""""""""""""""
+let g:pasta_disabled_filetypes = ["coffee", "markdown", "yaml", "slim", "nerdtree"]

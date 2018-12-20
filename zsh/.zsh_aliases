@@ -1,0 +1,25 @@
+alias glh="gl | head"
+alias g^="git push origin HEAD"
+alias gv="git pull --rebase"
+alias gv^="git pull --rebase && git push origin HEAD"
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gfa="git commit --amend --reset-author --no-edit"
+alias gco="git checkout"
+alias gcom="git checkout master"
+alias gst="git status"
+alias grm="git rebase master"
+alias gcm='git commit -m'
+alias gd='git diff'
+alias gb='git branch'
+alias rdbm='rake db:migrate'
+alias rs='rails s'
+alias rc='rails c'
+
+# shortcuts
+alias hip='~/Documents/dev/hipcamp-reserve'
+alias pocket='~/Documents/dev/pocketknife'
+alias dc up="docker-compose up"
+alias pc="heroku run rails c --app=hipcamp-tinh"
+alias wip="git commit -m WIP --no-verify"
+
+alias ag='ag --path-to-ignore ~/.ignore'

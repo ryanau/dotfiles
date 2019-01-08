@@ -16,10 +16,7 @@ alias rs='rails s'
 alias rc='rails c'
 
 # shortcuts
-alias hip='~/Documents/dev/hipcamp-reserve'
-alias pocket='~/Documents/dev/pocketknife'
-alias dc up="docker-compose up"
-alias pc="heroku run rails c --app=hipcamp-tinh"
+alias ss='~/Documents/dev/multiverse'
 alias wip="git commit -m WIP --no-verify"
 
 alias ag='ag --path-to-ignore ~/.ignore'

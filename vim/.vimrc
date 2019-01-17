@@ -84,8 +84,8 @@ set backspace=indent,eol,start
 set relativenumber
 autocmd! InsertEnter,InsertLeave * set invrelativenumber
 
-" alert for over 80 chars
-set colorcolumn=81
+" alert for over 100 chars
+set colorcolumn=101
 
 " set autochdir
 

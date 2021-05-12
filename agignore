@@ -66,3 +66,5 @@ ehthumbs.db
 *~
 .idea
 tags
+
+.pnpm-lock.yaml

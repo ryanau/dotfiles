@@ -34,6 +34,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'sickill/vim-pasta'
 Plugin 'machakann/vim-swap'
 Plugin 'tpope/vim-rhubarb'
+Plugin 'rhysd/clever-f.vim'
 
 " Syntax highlighting, file extension support
 Plugin 'tpope/vim-rails', { 'for' : 'ruby' }
@@ -223,7 +224,7 @@ nnoremap gm m
 let g:jsx_ext_required = 0
 
 " set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " dark red
 hi tsxTagName guifg=#E06C75

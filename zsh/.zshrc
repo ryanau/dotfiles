@@ -1,3 +1,6 @@
+export PYTHONPATH=$PYTHONPATH:/Users/ryanau/Documents/dev/multiverse/
+
+export PATH=/node_modules/.bin:$PATH
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -112,3 +115,5 @@ export NVM_DIR="$HOME/.nvm"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/ryanau/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/ryanau/.nvm/versions/node/v10.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+source /Users/ryanau/Documents/dev/git-subrepo/.rc

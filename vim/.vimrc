@@ -35,6 +35,7 @@ Plugin 'sickill/vim-pasta'
 Plugin 'machakann/vim-swap'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'rhysd/clever-f.vim'
+Plugin 'tomlion/vim-solidity'
 
 " Syntax highlighting, file extension support
 Plugin 'tpope/vim-rails', { 'for' : 'ruby' }
@@ -303,3 +304,5 @@ nmap <LocalLeader>hr <Plug>GitGutterUndoHunk
 " VimPasta
 """"""""""""""""""""""""""""""""""""
 let g:pasta_disabled_filetypes = ["coffee", "markdown", "yaml", "slim", "nerdtree"]
+
+let g:snipMate = { 'snippet_version' : 1 }

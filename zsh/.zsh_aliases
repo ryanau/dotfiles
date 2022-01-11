@@ -11,12 +11,16 @@ alias grm="git rebase master"
 alias gcm='git commit -m'
 alias gd='git diff'
 alias gb='git branch'
+alias wip="git commit -m WIP --no-verify"
+
+# rails
 alias rdbm='rake db:migrate'
 alias rs='rails s'
 alias rc='rails c'
 
 # shortcuts
 alias ss='~/Documents/dev/multiverse'
-alias wip="git commit -m WIP --no-verify"
+alias api='~/Documents/dev/multiverse/js-packages/api'
+alias web='~/Documents/dev/multiverse/js-packages/web'
 
 alias ag='ag --path-to-ignore ~/.ignore'
